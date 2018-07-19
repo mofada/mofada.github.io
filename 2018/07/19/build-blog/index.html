@@ -41,7 +41,7 @@ git安装(https://g,">
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">Hello World</h3>
+    <h3 class="subtitle">Windows下搭建Github博客</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -58,22 +58,104 @@ git安装(https://g,">
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">Windows下搭建Github博客</h1>
         <div class="stuff">
             <span>七月 19, 2018</span>
             
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/blog/">blog</a></li></ul>
+
 
         </div>
         <div class="content markdown">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h1 id="这个文章干嘛的"><a href="#这个文章干嘛的" class="headerlink" title="这个文章干嘛的"></a>这个文章干嘛的</h1><p>这个文章教你使用Hexo的搭建Github个人博客，从0开始搭建，因为本人也是刚刚搭建好，好了，开始吧。<br><img src="/2018/07/19/build-blog/mofada.png" alt="我的博客"></p>
+<h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><p>安装前提</p>
+<ul>
+<li><a href="https:  #git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+<li><a href="https:  #nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></li>
+</ul>
+<ol>
+<li><p>git安装(<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a>)<br><img src="/2018/07/19/build-blog/git-down.png" alt="Git下载"></p>
+</li>
+<li><p>NodeJs安装(<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a>)<br><img src="/2018/07/19/build-blog/nodejs-down.png" alt="NodeJs"></p>
+</li>
+</ol>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><ol>
+<li><p>打开git-bash<br><img src="/2018/07/19/build-blog/git-open.png" alt="打开git"></p>
+</li>
+<li><p>切换到你要部署的目录</p>
+<blockquote>
+<p>如: D:\Hexo<br>cd D:   #切换到D盘<br>mkdir Hexo   #创建目录Hexo</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="/2018/07/19/build-blog/mkdir-hexo.png" alt="创建文件夹"></p>
+<ol start="3">
+<li>安装hexo<blockquote>
+<p>cd Hexo   #切换到hexo目录<br>npm install -g hexo-cli   #安装hexo</p>
+</blockquote>
+</li>
+</ol>
+<p>…….等待<br><img src="/2018/07/19/build-blog/install.png" alt="安装完成"></p>
+<ol start="4">
+<li>初始化<blockquote>
+<p>hexo init   #初始化<br>npm install   #安装所需要的文件</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="/2018/07/19/build-blog/inited.png" alt="初始化完成"></p>
+<p><img src="/2018/07/19/build-blog/npm-install.png" alt="文件安装"></p>
+<ol start="5">
+<li><p>安装完成,目录结构如下</p>
+<blockquote>
+<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes  </p>
+</blockquote>
+</li>
+<li><p>启动hexo</p>
+<blockquote>
+<p>hexo g   #生成静态文件<br>hexo s   #启动服务器</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="/2018/07/19/build-blog/hexo-s.png" alt="启动服务器"></p>
+<p>打开浏览器输入(<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>) 可查看(端口根据实际使用的端口)<br><img src="/2018/07/19/build-blog/default-theme.png" alt="启动服务器"></p>
+<ol start="7">
+<li>修改主题<br>什么,你觉得界面很丑不好看?我们可以更换<a href="https://hexo.io/themes" target="_blank" rel="noopener">主题</a>,找了半天发现一个还不错的主题<a href="https://github.com/Fechin/hexo-theme-diaspora" target="_blank" rel="noopener">hexo-theme-diaspora</a>,我们以这个为准切换主题<br><img src="/2018/07/19/build-blog/diaspora.png" alt="diaspora"></li>
+</ol>
+<p>首先下载主题:</p>
+<blockquote>
+<p>git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:Fechin/hexo-theme-diaspora.git themes/diaspora</p>
+</blockquote>
+<p><img src="/2018/07/19/build-blog/diaspora-down.png" alt="diaspora-down"></p>
+<p>设置主题:<br>打开目录下文件:_config.yml,注意分号后面有一个空格<br><img src="/2018/07/19/build-blog/edit-theme.png" alt="theme"></p>
+<p>修改主题为diaspora:<br><img src="/2018/07/19/build-blog/set-themes.png" alt="set-themes"></p>
+<p>重新启动 </p>
+<blockquote>
+<p>hexo s</p>
+</blockquote>
+<p><img src="/2018/07/19/build-blog/diaspora-index.png" alt="diaspora-index"></p>
+<h1 id="Github搭建"><a href="#Github搭建" class="headerlink" title="Github搭建"></a>Github搭建</h1><ol>
+<li><p>首先打开Github(<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> ),需先注册<br><img src="/2018/07/19/build-blog/github.png" alt="github"></p>
+</li>
+<li><p>新建仓库<br><img src="/2018/07/19/build-blog/github-start.png" alt="github-start"></p>
+</li>
+</ol>
+<p>新建号之后,你就可以通过XXX.github.io进行访问了</p>
+<ol start="3">
+<li><p>创建本地ssh并上传,由于我已经创建好了,这里我就不再创建了,找了一个教程…<br><img src="/2018/07/19/build-blog/ssh.png" alt="ssh"></p>
+</li>
+<li><p>修改本地hexo下的_config.yml<br><img src="/2018/07/19/build-blog/edit-config.png" alt="edit-config"></p>
+<blockquote>
+<p>deploy:<br> type: git<br> repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:mofada/mofada.github.io.git<br> branch: master   </p>
+</blockquote>
+</li>
+</ol>
+<p>type -&gt; 类型 这里使用git<br>repo -&gt; 仓库地址<br><img src="/2018/07/19/build-blog/repo.png" alt="repo"><br>branch -&gt; 分支 一般是master(视具体情况)</p>
+<ol start="5">
+<li>部署代码<blockquote>
+<p>hexo clean   #清除缓存文件<br>hexo g   #生成静态文件<br>hexo d   #部署代码</p>
+</blockquote>
+</li>
+</ol>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
