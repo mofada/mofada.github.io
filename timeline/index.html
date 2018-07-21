@@ -704,6 +704,7 @@
 					<p class="md-timeline-excerpt">
 						
 							首先让我们看一个gif,来了解一下发生了什么
+可以看到在这个界面中,点击了 + 号界面会自动滑动,从原来的顶部移动到点击的位置附近,我们看下代码首先看一下布局可以看到,最外层是一个ConstraintLayout,然后嵌套了一个SmartRefreshLayout,再就是Nested...
 						...
 					</p>
                     		</div>
@@ -728,7 +729,13 @@
 					<p class="md-timeline-excerpt">
 						
 							OkHttp不会自动保存session会话,需要我们手动去设置,代码如下
-mOkHttpClient = new Ok...
+mOkHttpClient = new OkHttpClient.Builder()
+    //设置连接超时
+    .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
+    .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
+    .writeTimeout(WRITE_TIME_OUT, TimeUnit.SECONDS)
+    //设置cookie
+    .cookieJa...
 						...
 					</p>
                     		</div>
@@ -752,7 +759,9 @@ mOkHttpClient = new Ok...
 					</div>
 					<p class="md-timeline-excerpt">
 						
-							这个...
+							这个文章干嘛的这个文章教你使用Hexo的搭建Github个人博客，从0开始搭建，因为本人也是刚刚搭建好，好了，开始吧。
+环境安装安装前提
+
 						...
 					</p>
                     		</div>
@@ -776,7 +785,7 @@ mOkHttpClient = new Ok...
 					</div>
 					<p class="md-timeline-excerpt">
 						
-							Welcome to Hexo
+							Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
 						...
 					</p>
                     		</div>

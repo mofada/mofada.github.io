@@ -312,7 +312,13 @@
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             OkHttp不会自动保存session会话,需要我们手动去设置,代码如下
-mOkHttpClient = new Ok...
+mOkHttpClient = new OkHttpClient.Builder()
+    //设置连接超时
+    .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
+    .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
+    .writeTimeout(WRITE_TIME_OUT, TimeUnit.SECONDS)
+    //设置cookie
+    .cookieJa...
         
         &nbsp;&nbsp;&nbsp;
         <span>
