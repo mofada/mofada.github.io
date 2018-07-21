@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-21T07:56:12.212Z</updated>
+  <updated>2018-07-21T09:22:49.644Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>组件化两个App</title>
+    <link href="http://yoursite.com/2018/07/21/Componentized-Problem/"/>
+    <id>http://yoursite.com/2018/07/21/Componentized-Problem/</id>
+    <published>2018-07-21T09:04:15.000Z</published>
+    <updated>2018-07-21T09:22:49.644Z</updated>
+    
+    <content type="html"><![CDATA[<p>在一次项目运行中,突然发现一个问题,组件化变成了两个app,如图所示:<br><img src="/2018/07/21/Componentized-Problem/Screenshot.png" alt="问题图"><br>可以看到我的组件化项目变成了两个,完了完了,凉了凉了,怎么办,项目就要上线了,然后检查项目配置,各种检查无果,以为是组件化的问题,后来github找了个demo,发现没有我这样的问题,新建项目,重新组件化,发现的么可以用,没有问题,准备把项目重新拷贝进去,在拷贝的过程中又出现这个问题,经过仔细检查,问题来了:</p><pre><code class="xml"> &lt;application&gt;    &lt;!--主界面--&gt;    &lt;activity android:name=&quot;.view.MainActivity&quot;         android:launchMode=&quot;singleInstance&quot;/&gt; &lt;/application&gt;</code></pre><p>在MainActivity中,设置了launchMode,当我去掉launchMode之后就正常了,问题就在这里.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在一次项目运行中,突然发现一个问题,组件化变成了两个app,如图所示:&lt;br&gt;&lt;img src=&quot;/2018/07/21/Componentized-Problem/Screenshot.png&quot; alt=&quot;问题图&quot;&gt;&lt;br&gt;可以看到我的组件化项目变成了两个,完了完了,凉了
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="组件化" scheme="http://yoursite.com/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    
+      <category term="两个App" scheme="http://yoursite.com/tags/%E4%B8%A4%E4%B8%AAApp/"/>
+    
+  </entry>
   
   <entry>
     <title>NestedScrollView/ScrollView 设置文字自动滑动</title>
@@ -51,7 +80,7 @@
     <link href="http://yoursite.com/2018/07/19/OkHttp-Session/"/>
     <id>http://yoursite.com/2018/07/19/OkHttp-Session/</id>
     <published>2018-07-19T15:31:52.000Z</published>
-    <updated>2018-07-21T07:23:24.868Z</updated>
+    <updated>2018-07-21T08:28:25.704Z</updated>
     
     <content type="html"><![CDATA[<p>OkHttp不会自动保存session会话,需要我们手动去设置,代码如下</p><pre><code>mOkHttpClient = new OkHttpClient.Builder()    //设置连接超时    .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)    .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)    .writeTimeout(WRITE_TIME_OUT, TimeUnit.SECONDS)    //设置cookie    .cookieJar(new CookManager())    .build();</code></pre><p>在builder中设置cookieJar,但是cookieJar是个接口类,自定义一个CookManager类实现CookieJar接口.</p><pre><code>public class CookManager implements CookieJar {    //这里一定一定一定是HashMap&lt;String, List&lt;Cookie&gt;&gt;,是String,不是url.    private final HashMap&lt;String, List&lt;Cookie&gt;&gt; cookieStore = new HashMap&lt;&gt;();    @Override    public void saveFromResponse(HttpUrl url, List&lt;Cookie&gt; cookies) {        cookieStore.put(url.host(), cookies);    }    @Override    public List&lt;Cookie&gt; loadForRequest(HttpUrl url) {        List&lt;Cookie&gt; cookies = cookieStore.get(url.host());        return cookies != null ? cookies : new ArrayList&lt;Cookie&gt;();    }}</code></pre><p>!!!!!注意注意注意!!!!!!<br>HashMap的key是String!!!!直接传进去url,是没有效果的!!!!!</p><p>如何持久化?</p><pre><code>@Overridepublic void saveFromResponse(HttpUrl url, List&lt;Cookie&gt; cookies) {//session持久化方法,保存session参数for (Cookie cookie : cookies) {    Log.d(TAG, &quot;saveFromResponse() called with: url = [&quot; + url + &quot;], cookies = [&quot; + cookie + &quot;]&quot;);    Log.d(&quot;CookManager&quot;, &quot;saveFromResponse(CookManager.java:28): &quot; + cookie.name());    Log.d(&quot;CookManager&quot;, &quot;saveFromResponse(CookManager.java:28): &quot; + cookie.value());    Log.d(&quot;CookManager&quot;, &quot;saveFromResponse(CookManager.java:28): &quot; + cookie.domain());}Cookie cookie =new Cookie.Builder()        .name(&quot;JSESSIONID&quot;)        .value(&quot;FA69B5065A28377813B58E91004472B7&quot;)        .path(&quot;/foundation/&quot;)        .domain(&quot;115.29.186.247&quot;)        .build();cookies = new ArrayList&lt;Cookie&gt;();cookies.add(cookie);cookieStore.put(url.host(), cookies);}</code></pre><p>思路如上,保存Cookie基本参数，因业务不同而不同，如我的项目只需保存JSESSIONID,以及对应的值，path需要自己获取,domain不能为空，否则程序直接崩溃。在saveFromResponse方法中进行存储（本地存储），在loadForRequest中获取出来即可。</p>]]></content>
     
@@ -70,7 +99,9 @@
       <category term="android" scheme="http://yoursite.com/categories/android/"/>
     
     
-      <category term="android http" scheme="http://yoursite.com/tags/android-http/"/>
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
     
   </entry>
   
