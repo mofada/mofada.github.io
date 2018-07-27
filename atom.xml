@@ -329,9 +329,9 @@ im
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
-    
       <category term="base" scheme="http://yoursite.com/tags/base/"/>
+    
+      <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
     
   </entry>
   
@@ -361,9 +361,9 @@ im
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="base" scheme="http://yoursite.com/tags/base/"/>
-    
       <category term="fragment" scheme="http://yoursite.com/tags/fragment/"/>
+    
+      <category term="base" scheme="http://yoursite.com/tags/base/"/>
     
   </entry>
   
