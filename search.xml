@@ -288,9 +288,9 @@
             
             <tag> android </tag>
             
-            <tag> activity </tag>
-            
             <tag> base </tag>
+            
+            <tag> activity </tag>
             
         </tags>
       
@@ -313,9 +313,9 @@
             
             <tag> android </tag>
             
-            <tag> base </tag>
-            
             <tag> fragment </tag>
+            
+            <tag> base </tag>
             
         </tags>
       
