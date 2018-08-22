@@ -54,11 +54,11 @@ import java.util.Locale;
   </entry>
   
   <entry>
-    <title>可KeyboardUtils</title>
+    <title>软键盘工具类</title>
     <link href="http://yoursite.com/2018/08/20/KeyboardUtils/"/>
     <id>http://yoursite.com/2018/08/20/KeyboardUtils/</id>
     <published>2018-08-20T12:23:30.000Z</published>
-    <updated>2018-08-20T12:24:36.569Z</updated>
+    <updated>2018-08-22T04:29:11.269Z</updated>
     
     <content type="html"><![CDATA[<pre><code class="json"> /** * 隐藏软件盘 * @param activity */public static void hideKeyboard(Activity activity) {    InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context            .INPUT_METHOD_SERVICE);    // 隐藏软键盘    imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);}</code></pre>]]></content>
     
@@ -225,8 +225,6 @@ implementation &amp;quot;com.squareup.retrofit2:ret
     
       <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
     
-      <category term="http" scheme="http://yoursite.com/tags/http/"/>
-    
       <category term="retrofit" scheme="http://yoursite.com/tags/retrofit/"/>
     
       <category term="liveData" scheme="http://yoursite.com/tags/liveData/"/>
@@ -234,6 +232,8 @@ implementation &amp;quot;com.squareup.retrofit2:ret
       <category term="interceptor" scheme="http://yoursite.com/tags/interceptor/"/>
     
       <category term="okhttp" scheme="http://yoursite.com/tags/okhttp/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
     
       <category term="cookie" scheme="http://yoursite.com/tags/cookie/"/>
     
@@ -268,13 +268,13 @@ import android.util.TypedValue;
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
+      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
+    
       <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
     
       <category term="px" scheme="http://yoursite.com/tags/px/"/>
     
       <category term="ps" scheme="http://yoursite.com/tags/ps/"/>
-    
-      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
     
   </entry>
   
@@ -307,9 +307,9 @@ import cn.
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
-    
       <category term="jClient" scheme="http://yoursite.com/tags/jClient/"/>
+    
+      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
     
       <category term="极光im" scheme="http://yoursite.com/tags/%E6%9E%81%E5%85%89im/"/>
     
@@ -391,38 +391,6 @@ import java.util.Set;
   </entry>
   
   <entry>
-    <title>BaseFragment</title>
-    <link href="http://yoursite.com/2018/07/26/BaseFragment/"/>
-    <id>http://yoursite.com/2018/07/26/BaseFragment/</id>
-    <published>2018-07-26T08:34:25.000Z</published>
-    <updated>2018-07-27T02:21:03.897Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code class="java">import android.databinding.DataBindingUtil;import android.databinding.ViewDataBinding;import android.os.Bundle;import android.support.annotation.NonNull;import android.support.annotation.Nullable;import android.support.v4.app.Fragment;import android.view.LayoutInflater;import android.view.View;import android.view.ViewGroup;/** * @author : fada * Date : 2018/7/26 * Description : input your description */public abstract class BaseFragment&lt;T extends ViewDataBinding&gt; extends Fragment {    public T mBinding;    /**     * 视图是否已经初初始化     */    protected boolean isInit = false;    protected boolean isLoad = false;    /**     * 视图是否已经对用户可见，系统的方法     */    @Override    public void setUserVisibleHint(boolean isVisibleToUser) {        super.setUserVisibleHint(isVisibleToUser);        isCanLoadData();    }    @Nullable    @Override    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable            Bundle savedInstanceState) {        mBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);        isInit = true;        /*         * 初始化的时候去加载数据         */        isCanLoadData();        return mBinding.getRoot();    }    /**     * 视图销毁的时候讲Fragment是否初始化的状态变为false     */    @Override    public void onDestroyView() {        super.onDestroyView();        isInit = false;        isLoad = false;    }    /**     * 设置Fragment要显示的布局     *     * @return 布局的layoutId     */    protected abstract int getLayoutId();    /**     * 是否可以加载数据     * 可以加载数据的条件：     * 1.视图已经初始化     * 2.视图对用户可见     */    private void isCanLoadData() {        if (!isInit) {            return;        }        if (getUserVisibleHint() &amp;&amp; !isLoad) {            lazyLoad();            isLoad = true;        } else {            if (isLoad) {                stopLoad();            }        }    }    /**     * 当视图初始化并且对用户可见的时候去真正的加载数据     */    protected abstract void lazyLoad();    /**     * 当视图已经对用户不可见并且加载过数据，如果需要在切换到其他页面时停止加载数据，可以覆写此方法     */    protected void stopLoad() {    }    /**     * 找出对应的控件     *     * @param id     * @param &lt;T&gt;     * @return     */    protected &lt;T extends View&gt; T findViewById(int id) {        return (T) getContentView().findViewById(id);    }    /**     * 获取设置的布局     *     * @return     */    protected View getContentView() {        return mBinding.getRoot();    }    /**     * 获取dataBinding     *     * @return     */    protected final T getBinding() {        return mBinding;    }}</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.os.Bundle;
-im
-      
-    
-    </summary>
-    
-      <category term="android" scheme="http://yoursite.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://yoursite.com/tags/android/"/>
-    
-      <category term="fragment" scheme="http://yoursite.com/tags/fragment/"/>
-    
-      <category term="base" scheme="http://yoursite.com/tags/base/"/>
-    
-  </entry>
-  
-  <entry>
     <title>BaseActivity</title>
     <link href="http://yoursite.com/2018/07/26/BaseActivity/"/>
     <id>http://yoursite.com/2018/07/26/BaseActivity/</id>
@@ -448,9 +416,41 @@ im
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
+      <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
+    
       <category term="base" scheme="http://yoursite.com/tags/base/"/>
     
-      <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
+  </entry>
+  
+  <entry>
+    <title>BaseFragment</title>
+    <link href="http://yoursite.com/2018/07/26/BaseFragment/"/>
+    <id>http://yoursite.com/2018/07/26/BaseFragment/</id>
+    <published>2018-07-26T08:34:25.000Z</published>
+    <updated>2018-07-27T02:21:03.897Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="java">import android.databinding.DataBindingUtil;import android.databinding.ViewDataBinding;import android.os.Bundle;import android.support.annotation.NonNull;import android.support.annotation.Nullable;import android.support.v4.app.Fragment;import android.view.LayoutInflater;import android.view.View;import android.view.ViewGroup;/** * @author : fada * Date : 2018/7/26 * Description : input your description */public abstract class BaseFragment&lt;T extends ViewDataBinding&gt; extends Fragment {    public T mBinding;    /**     * 视图是否已经初初始化     */    protected boolean isInit = false;    protected boolean isLoad = false;    /**     * 视图是否已经对用户可见，系统的方法     */    @Override    public void setUserVisibleHint(boolean isVisibleToUser) {        super.setUserVisibleHint(isVisibleToUser);        isCanLoadData();    }    @Nullable    @Override    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable            Bundle savedInstanceState) {        mBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);        isInit = true;        /*         * 初始化的时候去加载数据         */        isCanLoadData();        return mBinding.getRoot();    }    /**     * 视图销毁的时候讲Fragment是否初始化的状态变为false     */    @Override    public void onDestroyView() {        super.onDestroyView();        isInit = false;        isLoad = false;    }    /**     * 设置Fragment要显示的布局     *     * @return 布局的layoutId     */    protected abstract int getLayoutId();    /**     * 是否可以加载数据     * 可以加载数据的条件：     * 1.视图已经初始化     * 2.视图对用户可见     */    private void isCanLoadData() {        if (!isInit) {            return;        }        if (getUserVisibleHint() &amp;&amp; !isLoad) {            lazyLoad();            isLoad = true;        } else {            if (isLoad) {                stopLoad();            }        }    }    /**     * 当视图初始化并且对用户可见的时候去真正的加载数据     */    protected abstract void lazyLoad();    /**     * 当视图已经对用户不可见并且加载过数据，如果需要在切换到其他页面时停止加载数据，可以覆写此方法     */    protected void stopLoad() {    }    /**     * 找出对应的控件     *     * @param id     * @param &lt;T&gt;     * @return     */    protected &lt;T extends View&gt; T findViewById(int id) {        return (T) getContentView().findViewById(id);    }    /**     * 获取设置的布局     *     * @return     */    protected View getContentView() {        return mBinding.getRoot();    }    /**     * 获取dataBinding     *     * @return     */    protected final T getBinding() {        return mBinding;    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
+import android.os.Bundle;
+im
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="base" scheme="http://yoursite.com/tags/base/"/>
+    
+      <category term="fragment" scheme="http://yoursite.com/tags/fragment/"/>
     
   </entry>
   
