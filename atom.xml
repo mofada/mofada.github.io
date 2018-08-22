@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-27T04:53:20.387Z</updated>
+  <updated>2018-08-22T02:58:10.625Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时间日期工具类</title>
+    <link href="http://yoursite.com/2018/08/22/TimeUtils/"/>
+    <id>http://yoursite.com/2018/08/22/TimeUtils/</id>
+    <published>2018-08-22T02:57:05.000Z</published>
+    <updated>2018-08-22T02:58:10.625Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="java">import android.text.format.DateUtils;import java.util.Calendar;import java.util.Date;import java.util.Locale;/** * @author : fada *         Date : 2018/8/16 *         Description : 时间日期工具类 */public class TimeUtils {    /**     * 是否是今天     *     * @param when     * @return     */    public static boolean isToday(long when) {        return DateUtils.isToday(when);    }    /**     * “HH:MM:SS”格式（24时制）     *     * @return     */    public static String hourMinterSecond() {        return hourMinterSecond(currentTimeMillis());    }    /**     * “HH:MM:SS”格式（24时制）     *     * @param date     * @return     */    public static String hourMinterSecond(long date) {        return String.format(Locale.CHINA, &quot;%tT&quot;, date);    }    /**     * 获取当前时间     *     * @return     */    public static long currentTimeMillis() {        return System.currentTimeMillis();    }    /**     * 一年中的天数（即年的第几天）     *     * @return     */    public static String dayOfYear() {        return dayOfYear(currentTimeMillis());    }    /**     * 一年中的天数（即年的第几天）     *     * @param date     * @return     */    public static String dayOfYear(long date) {        return String.format(Locale.CHINA, &quot;%tj&quot;, date);    }    /**     * 2位数字24时制的小时（不足2位前面补0）     *     * @return     */    public static String hour() {        return hour(currentTimeMillis());    }    /**     * 2位数字24时制的小时（不足2位前面补0）     *     * @param date     * @return     */    public static String hour(long date) {        return String.format(Locale.CHINA, &quot;%tH&quot;, date);    }    /**     * 2位数字的分钟（不足2位前面补0）     *     * @return     */    public static String minter() {        return minter(currentTimeMillis());    }    /**     * 2位数字的分钟（不足2位前面补0）     *     * @param date     * @return     */    public static String minter(long date) {        return String.format(Locale.CHINA, &quot;%tM&quot;, date);    }    /**     * 2位数字的秒（不足2位前面补0）     *     * @return     */    public static String second() {        return second(currentTimeMillis());    }    /**     * 2位数字的秒（不足2位前面补0）     *     * @param date     * @return     */    public static String second(long date) {        return String.format(Locale.CHINA, &quot;%tS&quot;, date);    }    /**     * 年月日 星期     *     * @return     */    public static String yearMonthDayWeekday() {        return yearMonthDayWeekday(currentTimeMillis());    }    /**     * 年月日 星期     *     * @param date     * @return     */    public static String yearMonthDayWeekday(long date) {        return String.format(Locale.CHINA, &quot;%s年%s月%s日 %s&quot;, year(date), month(date), day(date),                weekday(date));    }    /**     * 4位数字的年份（不足4位前面补0）     *     * @param date     * @return     */    public static String year(long date) {        return String.format(Locale.CHINA, &quot;%tY&quot;, date);    }    /**     * 两位数字的月份（不足两位前面补0）     *     * @param date     * @return     */    public static String month(long date) {        return String.format(Locale.CHINA, &quot;%tm&quot;, date);    }    /**     * 两位数字的日（不足两位前面补0     *     * @param date     * @return     */    public static String day(long date) {        return String.format(Locale.CHINA, &quot;%td&quot;, date);    }    /**     * 星期的全称     *     * @param date     * @return     */    public static String weekday(long date) {        return String.format(Locale.CHINA, &quot;%tA&quot;, date);    }    /**     * 4位数字的年份（不足4位前面补0）     *     * @return     */    public static String year() {        return year(currentTimeMillis());    }    /**     * 星期     *     * @return     */    public static String weekday() {        return weekday(currentTimeMillis());    }    /**     * 获取当前时间     *     * @return     */    public static Date getCurrent() {        return Calendar.getInstance().getTime();    }    /**     * 获取今天的日期     *     * @return     */    public static String today() {        return yearMonthDay();    }    /**     * “年-月-日”格式     *     * @return     */    public static String yearMonthDay() {        return yearMonthDay(currentTimeMillis());    }    /**     * “年-月-日”格式     *     * @param date     * @return     */    public static String yearMonthDay(long date) {        return String.format(Locale.CHINA, &quot;%tF&quot;, date);    }    /**     * 年-月-日 时:分     *     * @return     */    public static String yearMonthDayHourMinter() {        return yearMonthDayHourMinter(currentTimeMillis());    }    /**     * 年-月-日 时:分     *     * @param date     * @return     */    public static String yearMonthDayHourMinter(long date) {        return String.format(Locale.CHINA, &quot;%s %s&quot;, yearMonthDay(date), hourMinter(date));    }    /**     * “HH:MM”格式（24时制）     *     * @param date     * @return     */    public static String hourMinter(long date) {        return String.format(Locale.CHINA, &quot;%tR&quot;, date);    }    /**     * “HH:MM”格式（24时制）     *     * @return     */    public static String hourMinter() {        return hourMinter(currentTimeMillis());    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import android.text.format.DateUtils;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
+/
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
+    
+      <category term="Date" scheme="http://yoursite.com/tags/Date/"/>
+    
+      <category term="Time" scheme="http://yoursite.com/tags/Time/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>可KeyboardUtils</title>
+    <link href="http://yoursite.com/2018/08/20/KeyboardUtils/"/>
+    <id>http://yoursite.com/2018/08/20/KeyboardUtils/</id>
+    <published>2018-08-20T12:23:30.000Z</published>
+    <updated>2018-08-20T12:24:36.569Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="json"> /** * 隐藏软件盘 * @param activity */public static void hideKeyboard(Activity activity) {    InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context            .INPUT_METHOD_SERVICE);    // 隐藏软键盘    imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code class=&quot;json&quot;&gt; /**
+ * 隐藏软件盘
+ * @param activity
+ */
+public static void hideKeyboard(Activity activity) {
+    InputMethodManager imm
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>React</title>
+    <link href="http://yoursite.com/2018/08/06/React/"/>
+    <id>http://yoursite.com/2018/08/06/React/</id>
+    <published>2018-08-06T12:59:50.000Z</published>
+    <updated>2018-08-07T03:55:06.996Z</updated>
+    
+    <content type="html"><![CDATA[<p>create-react-app提供了一个超级简单的方法，只需要在package.json文件中，加一个配置项就可以了。</p><p>比如：</p><pre><code class="json">{  &quot;proxy&quot;: &quot;http://localhost:3001/&quot;}</code></pre><p>至于你用的是http的何种请求库，都是一样的，不用改任何代码。这个选项，只对开发环境有效，线上环境还是保持react应用和api应用同一个端口。</p><p>使用PropTypes需要先安装</p><pre><code>npm install --save prop-types</code></pre><p>使用时</p><pre><code>import PropTypes from &#39;prop-types&#39;;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;create-react-app提供了一个超级简单的方法，只需要在package.json文件中，加一个配置项就可以了。&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;{
+  &amp;quot;proxy&amp;quot;: &amp;quot;http://l
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>不滑动的ViewPager</title>
@@ -181,13 +268,13 @@ import android.util.TypedValue;
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
-    
       <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
     
       <category term="px" scheme="http://yoursite.com/tags/px/"/>
     
       <category term="ps" scheme="http://yoursite.com/tags/ps/"/>
+    
+      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
     
   </entry>
   
@@ -220,9 +307,9 @@ import cn.
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="jClient" scheme="http://yoursite.com/tags/jClient/"/>
-    
       <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
+    
+      <category term="jClient" scheme="http://yoursite.com/tags/jClient/"/>
     
       <category term="极光im" scheme="http://yoursite.com/tags/%E6%9E%81%E5%85%89im/"/>
     
@@ -304,38 +391,6 @@ import java.util.Set;
   </entry>
   
   <entry>
-    <title>BaseActivity</title>
-    <link href="http://yoursite.com/2018/07/26/BaseActivity/"/>
-    <id>http://yoursite.com/2018/07/26/BaseActivity/</id>
-    <published>2018-07-26T08:34:25.000Z</published>
-    <updated>2018-07-27T02:21:03.916Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code class="java">import android.databinding.DataBindingUtil;import android.databinding.ViewDataBinding;import android.os.Bundle;import android.support.annotation.LayoutRes;import android.support.annotation.Nullable;import android.support.v7.app.AppCompatActivity;import com.gyf.barlibrary.ImmersionBar;/** * @author : fada * Date : 2018/7/26 * Description : input your description */public abstract class BaseActivity&lt;T extends ViewDataBinding&gt; extends AppCompatActivity {    public T mBinding;    /**     * 是否位于前台     */    protected ImmersionBar mImmersionBar;    @Override    protected void onCreate(@Nullable Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        //状态栏        mImmersionBar = ImmersionBar                .with(this)                .statusBarDarkFont(true, 0.2f);        mImmersionBar.init();        mBinding = DataBindingUtil.setContentView(this, getLayoutId());    }    /**     * 获取布局id     *     * @return     */    protected abstract int getLayoutId();    @Override    protected void onDestroy() {        mImmersionBar.destroy();        super.onDestroy();    }    /**     * 获取databinging     * @return     */    public final T getBinding() {        return mBinding;    }}</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.os.Bundle;
-im
-      
-    
-    </summary>
-    
-      <category term="android" scheme="http://yoursite.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://yoursite.com/tags/android/"/>
-    
-      <category term="base" scheme="http://yoursite.com/tags/base/"/>
-    
-      <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
-    
-  </entry>
-  
-  <entry>
     <title>BaseFragment</title>
     <link href="http://yoursite.com/2018/07/26/BaseFragment/"/>
     <id>http://yoursite.com/2018/07/26/BaseFragment/</id>
@@ -364,6 +419,38 @@ im
       <category term="fragment" scheme="http://yoursite.com/tags/fragment/"/>
     
       <category term="base" scheme="http://yoursite.com/tags/base/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BaseActivity</title>
+    <link href="http://yoursite.com/2018/07/26/BaseActivity/"/>
+    <id>http://yoursite.com/2018/07/26/BaseActivity/</id>
+    <published>2018-07-26T08:34:25.000Z</published>
+    <updated>2018-07-27T02:21:03.916Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="java">import android.databinding.DataBindingUtil;import android.databinding.ViewDataBinding;import android.os.Bundle;import android.support.annotation.LayoutRes;import android.support.annotation.Nullable;import android.support.v7.app.AppCompatActivity;import com.gyf.barlibrary.ImmersionBar;/** * @author : fada * Date : 2018/7/26 * Description : input your description */public abstract class BaseActivity&lt;T extends ViewDataBinding&gt; extends AppCompatActivity {    public T mBinding;    /**     * 是否位于前台     */    protected ImmersionBar mImmersionBar;    @Override    protected void onCreate(@Nullable Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        //状态栏        mImmersionBar = ImmersionBar                .with(this)                .statusBarDarkFont(true, 0.2f);        mImmersionBar.init();        mBinding = DataBindingUtil.setContentView(this, getLayoutId());    }    /**     * 获取布局id     *     * @return     */    protected abstract int getLayoutId();    @Override    protected void onDestroy() {        mImmersionBar.destroy();        super.onDestroy();    }    /**     * 获取databinging     * @return     */    public final T getBinding() {        return mBinding;    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
+import android.os.Bundle;
+im
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="base" scheme="http://yoursite.com/tags/base/"/>
+    
+      <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
     
   </entry>
   
