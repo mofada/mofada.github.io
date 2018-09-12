@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-22T02:58:10.625Z</updated>
+  <updated>2018-09-12T01:15:35.617Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IP工具类</title>
+    <link href="http://yoursite.com/2018/09/12/InternetProtocolUtils/"/>
+    <id>http://yoursite.com/2018/09/12/InternetProtocolUtils/</id>
+    <published>2018-09-12T01:13:32.000Z</published>
+    <updated>2018-09-12T01:15:35.617Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="java">import java.net.Inet4Address;import java.net.InetAddress;import java.net.NetworkInterface;import java.net.SocketException;import java.util.Enumeration;/** * @author : www10 * @Date : 2018/9/11 * @Description : 网络工具类 */public class InternetProtocolUtils {    /**     * 获取wifi和网线的ip     * @param context     * @return     */    public static String getInternetProtocol(Context context) {        NetworkInfo networkInfo = getNetworkInfo(context);        if (networkInfo != null &amp;&amp; networkInfo.isAvailable()) {            int type = networkInfo.getType();            switch (type) {                case ConnectivityManager.TYPE_WIFI:                    //wifi                    return getWifiInternetProtocol(context);                case ConnectivityManager.TYPE_ETHERNET:                    //网线                    return getEthernetInternetProtocol(context);                default:                    return &quot;请连接wifi或者插上网线&quot;;            }        } else {            return &quot;网络不可用&quot;;        }    }    /**     * 插网线     *     * @param context     * @return     */    private static String getEthernetInternetProtocol(Context context) {        try {            for (Enumeration&lt;NetworkInterface&gt; en = NetworkInterface                    .getNetworkInterfaces(); en.hasMoreElements(); ) {                NetworkInterface intf = en.nextElement();                for (Enumeration&lt;InetAddress&gt; enumIpAddr = intf                        .getInetAddresses(); enumIpAddr.hasMoreElements(); ) {                    InetAddress inetAddress = enumIpAddr.nextElement();                    if (!inetAddress.isLoopbackAddress()                            &amp;&amp; inetAddress instanceof Inet4Address) {                        return inetAddress.getHostAddress();                    }                }            }        } catch (SocketException ex) {            ex.printStackTrace();        }        return &quot;0.0.0.0&quot;;    }    /**     * 获取wifi地址     *     * @param context     */    private static String getWifiInternetProtocol(Context context) {        WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService                (Context.WIFI_SERVICE);        WifiInfo connectionInfo = null;        if (wifiManager != null) {            connectionInfo = wifiManager.getConnectionInfo();        }        int ipAddress = 0;        if (connectionInfo != null) {            ipAddress = connectionInfo.getIpAddress();        }        return intToIp(ipAddress);    }    /**     * 判断网络是否可用     *     * @param context     * @return     */    private static boolean networkAvailable(Context context) {        NetworkInfo networkInfo = getNetworkInfo(context);        return networkInfo != null &amp;&amp; networkInfo.isAvailable();    }    /**     * 获取网络管理类     *     * @param context     * @return     */    private static NetworkInfo getNetworkInfo(Context context) {        ConnectivityManager systemService = (ConnectivityManager) context                .getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);        if (systemService != null) {            return systemService.getActiveNetworkInfo();        } else {            return null;        }    }    /**     * int型ip转String     *     * @param i     * @return     */    private static String intToIp(int i) {        return (i &amp; 0xFF) + &quot;.&quot; +                ((i &gt;&gt; 8) &amp; 0xFF) + &quot;.&quot; +                ((i &gt;&gt; 16) &amp; 0xFF) + &quot;.&quot; +                (i &gt;&gt; 24 &amp; 0xFF);    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketE
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="ip" scheme="http://yoursite.com/tags/ip/"/>
+    
+      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
+    
+  </entry>
   
   <entry>
     <title>时间日期工具类</title>
@@ -58,7 +90,7 @@ import java.util.Locale;
     <link href="http://yoursite.com/2018/08/20/KeyboardUtils/"/>
     <id>http://yoursite.com/2018/08/20/KeyboardUtils/</id>
     <published>2018-08-20T12:23:30.000Z</published>
-    <updated>2018-08-22T04:29:11.269Z</updated>
+    <updated>2018-09-12T01:15:35.549Z</updated>
     
     <content type="html"><![CDATA[<pre><code class="json"> /** * 隐藏软件盘 * @param activity */public static void hideKeyboard(Activity activity) {    InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context            .INPUT_METHOD_SERVICE);    // 隐藏软键盘    imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);}</code></pre>]]></content>
     
@@ -76,6 +108,18 @@ public static void hideKeyboard(Activity activity) {
     
     </summary>
     
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
+    
+      <category term="keyboard" scheme="http://yoursite.com/tags/keyboard/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="cookie" scheme="http://yoursite.com/tags/cookie/"/>
     
   </entry>
   
@@ -225,6 +269,10 @@ implementation &amp;quot;com.squareup.retrofit2:ret
     
       <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
     
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="cookie" scheme="http://yoursite.com/tags/cookie/"/>
+    
       <category term="retrofit" scheme="http://yoursite.com/tags/retrofit/"/>
     
       <category term="liveData" scheme="http://yoursite.com/tags/liveData/"/>
@@ -232,10 +280,6 @@ implementation &amp;quot;com.squareup.retrofit2:ret
       <category term="interceptor" scheme="http://yoursite.com/tags/interceptor/"/>
     
       <category term="okhttp" scheme="http://yoursite.com/tags/okhttp/"/>
-    
-      <category term="http" scheme="http://yoursite.com/tags/http/"/>
-    
-      <category term="cookie" scheme="http://yoursite.com/tags/cookie/"/>
     
   </entry>
   
@@ -307,9 +351,9 @@ import cn.
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="jClient" scheme="http://yoursite.com/tags/jClient/"/>
-    
       <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
+    
+      <category term="jClient" scheme="http://yoursite.com/tags/jClient/"/>
     
       <category term="极光im" scheme="http://yoursite.com/tags/%E6%9E%81%E5%85%89im/"/>
     
@@ -416,9 +460,9 @@ im
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="base" scheme="http://yoursite.com/tags/base/"/>
-    
       <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
+    
+      <category term="base" scheme="http://yoursite.com/tags/base/"/>
     
   </entry>
   
@@ -448,9 +492,9 @@ im
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="fragment" scheme="http://yoursite.com/tags/fragment/"/>
-    
       <category term="base" scheme="http://yoursite.com/tags/base/"/>
+    
+      <category term="fragment" scheme="http://yoursite.com/tags/fragment/"/>
     
   </entry>
   

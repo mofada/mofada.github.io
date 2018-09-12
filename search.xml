@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>IP工具类</title>
+      <link href="/2018/09/12/InternetProtocolUtils/"/>
+      <url>/2018/09/12/InternetProtocolUtils/</url>
+      <content type="html"><![CDATA[<pre><code class="java">import java.net.Inet4Address;import java.net.InetAddress;import java.net.NetworkInterface;import java.net.SocketException;import java.util.Enumeration;/** * @author : www10 * @Date : 2018/9/11 * @Description : 网络工具类 */public class InternetProtocolUtils {    /**     * 获取wifi和网线的ip     * @param context     * @return     */    public static String getInternetProtocol(Context context) {        NetworkInfo networkInfo = getNetworkInfo(context);        if (networkInfo != null &amp;&amp; networkInfo.isAvailable()) {            int type = networkInfo.getType();            switch (type) {                case ConnectivityManager.TYPE_WIFI:                    //wifi                    return getWifiInternetProtocol(context);                case ConnectivityManager.TYPE_ETHERNET:                    //网线                    return getEthernetInternetProtocol(context);                default:                    return &quot;请连接wifi或者插上网线&quot;;            }        } else {            return &quot;网络不可用&quot;;        }    }    /**     * 插网线     *     * @param context     * @return     */    private static String getEthernetInternetProtocol(Context context) {        try {            for (Enumeration&lt;NetworkInterface&gt; en = NetworkInterface                    .getNetworkInterfaces(); en.hasMoreElements(); ) {                NetworkInterface intf = en.nextElement();                for (Enumeration&lt;InetAddress&gt; enumIpAddr = intf                        .getInetAddresses(); enumIpAddr.hasMoreElements(); ) {                    InetAddress inetAddress = enumIpAddr.nextElement();                    if (!inetAddress.isLoopbackAddress()                            &amp;&amp; inetAddress instanceof Inet4Address) {                        return inetAddress.getHostAddress();                    }                }            }        } catch (SocketException ex) {            ex.printStackTrace();        }        return &quot;0.0.0.0&quot;;    }    /**     * 获取wifi地址     *     * @param context     */    private static String getWifiInternetProtocol(Context context) {        WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService                (Context.WIFI_SERVICE);        WifiInfo connectionInfo = null;        if (wifiManager != null) {            connectionInfo = wifiManager.getConnectionInfo();        }        int ipAddress = 0;        if (connectionInfo != null) {            ipAddress = connectionInfo.getIpAddress();        }        return intToIp(ipAddress);    }    /**     * 判断网络是否可用     *     * @param context     * @return     */    private static boolean networkAvailable(Context context) {        NetworkInfo networkInfo = getNetworkInfo(context);        return networkInfo != null &amp;&amp; networkInfo.isAvailable();    }    /**     * 获取网络管理类     *     * @param context     * @return     */    private static NetworkInfo getNetworkInfo(Context context) {        ConnectivityManager systemService = (ConnectivityManager) context                .getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);        if (systemService != null) {            return systemService.getActiveNetworkInfo();        } else {            return null;        }    }    /**     * int型ip转String     *     * @param i     * @return     */    private static String intToIp(int i) {        return (i &amp; 0xFF) + &quot;.&quot; +                ((i &gt;&gt; 8) &amp; 0xFF) + &quot;.&quot; +                ((i &gt;&gt; 16) &amp; 0xFF) + &quot;.&quot; +                (i &gt;&gt; 24 &amp; 0xFF);    }}</code></pre>]]></content>
+      
+      <categories>
+          
+          <category> android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> android </tag>
+            
+            <tag> ip </tag>
+            
+            <tag> utils </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>时间日期工具类</title>
       <link href="/2018/08/22/TimeUtils/"/>
       <url>/2018/08/22/TimeUtils/</url>
@@ -35,6 +60,26 @@
       <url>/2018/08/20/KeyboardUtils/</url>
       <content type="html"><![CDATA[<pre><code class="json"> /** * 隐藏软件盘 * @param activity */public static void hideKeyboard(Activity activity) {    InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context            .INPUT_METHOD_SERVICE);    // 隐藏软键盘    imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);}</code></pre>]]></content>
       
+      <categories>
+          
+          <category> android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> android </tag>
+            
+            <tag> utils </tag>
+            
+            <tag> keyboard </tag>
+            
+            <tag> http </tag>
+            
+            <tag> cookie </tag>
+            
+        </tags>
       
     </entry>
     
@@ -141,6 +186,10 @@
             
             <tag> utils </tag>
             
+            <tag> http </tag>
+            
+            <tag> cookie </tag>
+            
             <tag> retrofit </tag>
             
             <tag> liveData </tag>
@@ -148,10 +197,6 @@
             <tag> interceptor </tag>
             
             <tag> okhttp </tag>
-            
-            <tag> http </tag>
-            
-            <tag> cookie </tag>
             
         </tags>
       
@@ -203,9 +248,9 @@
             
             <tag> android </tag>
             
-            <tag> jClient </tag>
-            
             <tag> utils </tag>
+            
+            <tag> jClient </tag>
             
             <tag> 极光im </tag>
             
@@ -288,9 +333,9 @@
             
             <tag> android </tag>
             
-            <tag> base </tag>
-            
             <tag> activity </tag>
+            
+            <tag> base </tag>
             
         </tags>
       
@@ -313,9 +358,9 @@
             
             <tag> android </tag>
             
-            <tag> fragment </tag>
-            
             <tag> base </tag>
+            
+            <tag> fragment </tag>
             
         </tags>
       
