@@ -435,38 +435,6 @@ import java.util.Set;
   </entry>
   
   <entry>
-    <title>BaseActivity</title>
-    <link href="http://yoursite.com/2018/07/26/BaseActivity/"/>
-    <id>http://yoursite.com/2018/07/26/BaseActivity/</id>
-    <published>2018-07-26T08:34:25.000Z</published>
-    <updated>2018-07-27T02:21:03.916Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code class="java">import android.databinding.DataBindingUtil;import android.databinding.ViewDataBinding;import android.os.Bundle;import android.support.annotation.LayoutRes;import android.support.annotation.Nullable;import android.support.v7.app.AppCompatActivity;import com.gyf.barlibrary.ImmersionBar;/** * @author : fada * Date : 2018/7/26 * Description : input your description */public abstract class BaseActivity&lt;T extends ViewDataBinding&gt; extends AppCompatActivity {    public T mBinding;    /**     * 是否位于前台     */    protected ImmersionBar mImmersionBar;    @Override    protected void onCreate(@Nullable Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        //状态栏        mImmersionBar = ImmersionBar                .with(this)                .statusBarDarkFont(true, 0.2f);        mImmersionBar.init();        mBinding = DataBindingUtil.setContentView(this, getLayoutId());    }    /**     * 获取布局id     *     * @return     */    protected abstract int getLayoutId();    @Override    protected void onDestroy() {        mImmersionBar.destroy();        super.onDestroy();    }    /**     * 获取databinging     * @return     */    public final T getBinding() {        return mBinding;    }}</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.os.Bundle;
-im
-      
-    
-    </summary>
-    
-      <category term="android" scheme="http://yoursite.com/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://yoursite.com/tags/android/"/>
-    
-      <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
-    
-      <category term="base" scheme="http://yoursite.com/tags/base/"/>
-    
-  </entry>
-  
-  <entry>
     <title>BaseFragment</title>
     <link href="http://yoursite.com/2018/07/26/BaseFragment/"/>
     <id>http://yoursite.com/2018/07/26/BaseFragment/</id>
@@ -495,6 +463,38 @@ im
       <category term="base" scheme="http://yoursite.com/tags/base/"/>
     
       <category term="fragment" scheme="http://yoursite.com/tags/fragment/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BaseActivity</title>
+    <link href="http://yoursite.com/2018/07/26/BaseActivity/"/>
+    <id>http://yoursite.com/2018/07/26/BaseActivity/</id>
+    <published>2018-07-26T08:34:25.000Z</published>
+    <updated>2018-07-27T02:21:03.916Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="java">import android.databinding.DataBindingUtil;import android.databinding.ViewDataBinding;import android.os.Bundle;import android.support.annotation.LayoutRes;import android.support.annotation.Nullable;import android.support.v7.app.AppCompatActivity;import com.gyf.barlibrary.ImmersionBar;/** * @author : fada * Date : 2018/7/26 * Description : input your description */public abstract class BaseActivity&lt;T extends ViewDataBinding&gt; extends AppCompatActivity {    public T mBinding;    /**     * 是否位于前台     */    protected ImmersionBar mImmersionBar;    @Override    protected void onCreate(@Nullable Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        //状态栏        mImmersionBar = ImmersionBar                .with(this)                .statusBarDarkFont(true, 0.2f);        mImmersionBar.init();        mBinding = DataBindingUtil.setContentView(this, getLayoutId());    }    /**     * 获取布局id     *     * @return     */    protected abstract int getLayoutId();    @Override    protected void onDestroy() {        mImmersionBar.destroy();        super.onDestroy();    }    /**     * 获取databinging     * @return     */    public final T getBinding() {        return mBinding;    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
+import android.os.Bundle;
+im
+      
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="activity" scheme="http://yoursite.com/tags/activity/"/>
+    
+      <category term="base" scheme="http://yoursite.com/tags/base/"/>
     
   </entry>
   
