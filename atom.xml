@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-12T01:15:35.617Z</updated>
+  <updated>2018-09-15T01:24:59.868Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Clion + Arduino 开发环境搭建</title>
+    <link href="http://yoursite.com/2018/09/15/Clion+Arduino/"/>
+    <id>http://yoursite.com/2018/09/15/Clion+Arduino/</id>
+    <published>2018-09-15T01:21:18.000Z</published>
+    <updated>2018-09-15T01:24:59.868Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="arduino" scheme="http://yoursite.com/categories/arduino/"/>
+    
+    
+      <category term="Clion" scheme="http://yoursite.com/tags/Clion/"/>
+    
+      <category term="Arduino" scheme="http://yoursite.com/tags/Arduino/"/>
+    
+      <category term="Arduino IDE" scheme="http://yoursite.com/tags/Arduino-IDE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React-Native入门</title>
+    <link href="http://yoursite.com/2018/09/15/React-Native%E5%85%A5%E9%97%A8/"/>
+    <id>http://yoursite.com/2018/09/15/React-Native入门/</id>
+    <published>2018-09-15T01:10:34.000Z</published>
+    <updated>2018-09-15T01:20:19.124Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在开始学习React-Native, 但是环境搭建就碰到了问题,如图1<br><img src="/2018/09/15/React-Native入门/图1.png" alt="图1"><br>网上找了很多答案, 都不是很满意,最后的解决办法就是<strong>删除NodeJs安装目录下的node_modules目录</strong>,<br>然后再控制面板选中nodejs,右键进行修复就好啦,就可以继续安装了<br><img src="/2018/09/15/React-Native入门/图2.png" alt="图2"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在开始学习React-Native, 但是环境搭建就碰到了问题,如图1&lt;br&gt;&lt;img src=&quot;/2018/09/15/React-Native入门/图1.png&quot; alt=&quot;图1&quot;&gt;&lt;br&gt;网上找了很多答案, 都不是很满意,最后的解决办法就是&lt;strong&gt;删除No
+      
+    
+    </summary>
+    
+      <category term="react-native" scheme="http://yoursite.com/categories/react-native/"/>
+    
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+    
+  </entry>
   
   <entry>
     <title>IP工具类</title>
@@ -42,9 +91,9 @@ import java.net.SocketE
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="ip" scheme="http://yoursite.com/tags/ip/"/>
-    
       <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
+    
+      <category term="ip" scheme="http://yoursite.com/tags/ip/"/>
     
   </entry>
   
@@ -609,27 +658,6 @@ im
     
     
       <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/07/19/hello-world/"/>
-    <id>http://yoursite.com/2018/07/19/hello-world/</id>
-    <published>2018-07-19T02:07:33.013Z</published>
-    <updated>2018-07-21T05:44:16.227Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   

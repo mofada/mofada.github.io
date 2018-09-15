@@ -3,6 +3,54 @@
   
     
     <entry>
+      <title>Clion + Arduino 开发环境搭建</title>
+      <link href="/2018/09/15/Clion+Arduino/"/>
+      <url>/2018/09/15/Clion+Arduino/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> arduino </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Clion </tag>
+            
+            <tag> Arduino </tag>
+            
+            <tag> Arduino IDE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>React-Native入门</title>
+      <link href="/2018/09/15/React-Native%E5%85%A5%E9%97%A8/"/>
+      <url>/2018/09/15/React-Native%E5%85%A5%E9%97%A8/</url>
+      <content type="html"><![CDATA[<p>最近在开始学习React-Native, 但是环境搭建就碰到了问题,如图1<br><img src="/2018/09/15/React-Native入门/图1.png" alt="图1"><br>网上找了很多答案, 都不是很满意,最后的解决办法就是<strong>删除NodeJs安装目录下的node_modules目录</strong>,<br>然后再控制面板选中nodejs,右键进行修复就好啦,就可以继续安装了<br><img src="/2018/09/15/React-Native入门/图2.png" alt="图2"></p>]]></content>
+      
+      <categories>
+          
+          <category> react-native </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> react-native </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>IP工具类</title>
       <link href="/2018/09/12/InternetProtocolUtils/"/>
       <url>/2018/09/12/InternetProtocolUtils/</url>
@@ -19,9 +67,9 @@
             
             <tag> android </tag>
             
-            <tag> ip </tag>
-            
             <tag> utils </tag>
+            
+            <tag> ip </tag>
             
         </tags>
       
