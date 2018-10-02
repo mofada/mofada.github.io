@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Sat Sep 15 2018 09:21:18 GMT+0800">
-        <meta property="article:modified_time" content="Sat Sep 15 2018 09:24:59 GMT+0800">
+        <meta property="article:modified_time" content="Tue Oct 02 2018 22:10:46 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/15/Clion+Arduino/index.html",
     "headline": "Clion + Arduino 开发环境搭建",
     "datePublished": "Sat Sep 15 2018 09:21:18 GMT+0800",
-    "dateModified": "Sat Sep 15 2018 09:24:59 GMT+0800",
+    "dateModified": "Tue Oct 02 2018 22:10:46 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "发达",
@@ -339,6 +339,15 @@
 
     <!-- Left aligned menu below button -->
     
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-安装Clion"><span class="post-toc-text">1.安装Clion</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-配置Clion"><span class="post-toc-text">2.配置Clion</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-安装Arduino-IDE"><span class="post-toc-text">3.安装Arduino IDE</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-配置"><span class="post-toc-text">4.配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-这个时候就已经OK了"><span class="post-toc-text">5.这个时候就已经OK了</span></a></li></ol>
+    </ul>
     
 
 
@@ -505,7 +514,24 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <p>相信学习Arduino的同学都用过官方的ide，如图<br><img src="/2018/09/15/Clion+Arduino/./arduino-ide.png" alt="arduino-ide"></p>
+<ol>
+<li>没提示（对于习惯了ide提示的人来说这个很难受）  </li>
+<li>不支持中文注释（这个很不开心，用百度输入法输入直接卡死，但是Windows自带的输入法可以正常输入，吐槽一下百度输入法）<br>因为深爱JetBrains公司的ide，我就在想JetBrains是否有支持的ide，经过查找，发现Clion是专门开发C/CPP/C#，然后找了很多教程，发现Clion有个插件支持Arduino项目。好的，让我们开始吧！</li>
+</ol>
+<hr>
+<h2 id="1-安装Clion"><a href="#1-安装Clion" class="headerlink" title="1.安装Clion"></a>1.安装Clion</h2><p>这步略过，安装软件很简单，就不解释了，主要是Clion是收费的，需要注册码，<a href="http://idea.lanyus.com/" target="_blank" rel="noopener">JetBrains通用注册码</a></p>
+<h2 id="2-配置Clion"><a href="#2-配置Clion" class="headerlink" title="2.配置Clion"></a>2.配置Clion</h2><p>这里使用的是MinGW<br><img src="/2018/09/15/Clion+Arduino/./toolchains.png" alt="toolchains"></p>
+<h2 id="3-安装Arduino-IDE"><a href="#3-安装Arduino-IDE" class="headerlink" title="3.安装Arduino IDE"></a>3.安装Arduino IDE</h2><p>没什么难度，唯一记住的一点就是需要安装在C盘（默认目录），否则找不到SDK，报错</p>
+<h2 id="4-配置"><a href="#4-配置" class="headerlink" title="4.配置"></a>4.配置</h2><p>打开Clion安装插件<br><img src="/2018/09/15/Clion+Arduino/./plugs.png" alt="plugs"><br>安装第二个和第三个，<em>Serial Port Monitor</em>（串口调试器）、Arduino插件（重点，选择后面那个，也是就<strong>v1.2.3</strong>的版本，否则新建项目报错）</p>
+<h2 id="5-这个时候就已经OK了"><a href="#5-这个时候就已经OK了" class="headerlink" title="5.这个时候就已经OK了"></a>5.这个时候就已经OK了</h2><p><img src="/2018/09/15/Clion+Arduino/./CMakeLists.png" alt="CMakeLists"></p>
+<pre><code class="txt">//设置开发板型号
+set(${CMAKE_PROJECT_NAME}_BOARD uno)
+//端口号
+set(${CMAKE_PROJECT_NAME}_PORT COM3)
+</code></pre>
+<p>参见-&gt;<a href="https://arduino.stackexchange.com/questions/20294/clion-arduino" target="_blank" rel="noopener">clion-arduino</a></p>
+
         
     
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-15T01:24:59.868Z</updated>
+  <updated>2018-10-02T14:10:46.835Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,18 @@
     <link href="http://yoursite.com/2018/09/15/Clion+Arduino/"/>
     <id>http://yoursite.com/2018/09/15/Clion+Arduino/</id>
     <published>2018-09-15T01:21:18.000Z</published>
-    <updated>2018-09-15T01:24:59.868Z</updated>
+    <updated>2018-10-02T14:10:46.835Z</updated>
+    
+    <content type="html"><![CDATA[<p>相信学习Arduino的同学都用过官方的ide，如图<br><img src="/2018/09/15/Clion+Arduino/./arduino-ide.png" alt="arduino-ide"></p><ol><li>没提示（对于习惯了ide提示的人来说这个很难受）  </li><li>不支持中文注释（这个很不开心，用百度输入法输入直接卡死，但是Windows自带的输入法可以正常输入，吐槽一下百度输入法）<br>因为深爱JetBrains公司的ide，我就在想JetBrains是否有支持的ide，经过查找，发现Clion是专门开发C/CPP/C#，然后找了很多教程，发现Clion有个插件支持Arduino项目。好的，让我们开始吧！</li></ol><hr><h2 id="1-安装Clion"><a href="#1-安装Clion" class="headerlink" title="1.安装Clion"></a>1.安装Clion</h2><p>这步略过，安装软件很简单，就不解释了，主要是Clion是收费的，需要注册码，<a href="http://idea.lanyus.com/" target="_blank" rel="noopener">JetBrains通用注册码</a></p><h2 id="2-配置Clion"><a href="#2-配置Clion" class="headerlink" title="2.配置Clion"></a>2.配置Clion</h2><p>这里使用的是MinGW<br><img src="/2018/09/15/Clion+Arduino/./toolchains.png" alt="toolchains"></p><h2 id="3-安装Arduino-IDE"><a href="#3-安装Arduino-IDE" class="headerlink" title="3.安装Arduino IDE"></a>3.安装Arduino IDE</h2><p>没什么难度，唯一记住的一点就是需要安装在C盘（默认目录），否则找不到SDK，报错</p><h2 id="4-配置"><a href="#4-配置" class="headerlink" title="4.配置"></a>4.配置</h2><p>打开Clion安装插件<br><img src="/2018/09/15/Clion+Arduino/./plugs.png" alt="plugs"><br>安装第二个和第三个，<em>Serial Port Monitor</em>（串口调试器）、Arduino插件（重点，选择后面那个，也是就<strong>v1.2.3</strong>的版本，否则新建项目报错）</p><h2 id="5-这个时候就已经OK了"><a href="#5-这个时候就已经OK了" class="headerlink" title="5.这个时候就已经OK了"></a>5.这个时候就已经OK了</h2><p><img src="/2018/09/15/Clion+Arduino/./CMakeLists.png" alt="CMakeLists"></p><pre><code class="txt">//设置开发板型号set(${CMAKE_PROJECT_NAME}_BOARD uno)//端口号set(${CMAKE_PROJECT_NAME}_PORT COM3)</code></pre><p>参见-&gt;<a href="https://arduino.stackexchange.com/questions/20294/clion-arduino" target="_blank" rel="noopener">clion-arduino</a></p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;相信学习Arduino的同学都用过官方的ide，如图&lt;br&gt;&lt;img src=&quot;/2018/09/15/Clion+Arduino/./arduino-ide.png&quot; alt=&quot;arduino-ide&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;没提示（对于习惯了ide提示的人来说这个
+      
     
     </summary>
     
@@ -39,19 +48,19 @@
   </entry>
   
   <entry>
-    <title>React-Native入门</title>
+    <title>React-Native踩坑指南</title>
     <link href="http://yoursite.com/2018/09/15/React-Native%E5%85%A5%E9%97%A8/"/>
     <id>http://yoursite.com/2018/09/15/React-Native入门/</id>
     <published>2018-09-15T01:10:34.000Z</published>
-    <updated>2018-09-15T01:20:19.124Z</updated>
+    <updated>2018-10-02T12:53:01.052Z</updated>
     
-    <content type="html"><![CDATA[<p>最近在开始学习React-Native, 但是环境搭建就碰到了问题,如图1<br><img src="/2018/09/15/React-Native入门/图1.png" alt="图1"><br>网上找了很多答案, 都不是很满意,最后的解决办法就是<strong>删除NodeJs安装目录下的node_modules目录</strong>,<br>然后再控制面板选中nodejs,右键进行修复就好啦,就可以继续安装了<br><img src="/2018/09/15/React-Native入门/图2.png" alt="图2"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-最近在开始学习React-Native-但是环境搭建就碰到了问题-如图1"><a href="#1-最近在开始学习React-Native-但是环境搭建就碰到了问题-如图1" class="headerlink" title="1.最近在开始学习React-Native, 但是环境搭建就碰到了问题,如图1"></a>1.最近在开始学习React-Native, 但是环境搭建就碰到了问题,如图1</h1><p><img src="/2018/09/15/React-Native入门/图1.png" alt="图1"><br>网上找了很多答案, 都不是很满意,最后的解决办法就是<strong>删除NodeJs安装目录下的node_modules目录</strong>,<br>然后再控制面板选中nodejs,右键进行修复就好啦,就可以继续安装了<br><img src="/2018/09/15/React-Native入门/图2.png" alt="图2"></p><h1 id="2-运行的错误"><a href="#2-运行的错误" class="headerlink" title="2.运行的错误"></a>2.运行的错误</h1><p><img src="/2018/09/15/React-Native入门/图3.png" alt="图3"></p><p>解决办法-&gt;<a href="https://stackoverflow.com/questions/52486219/unable-to-resolve-module-babel-runtime-helpers-interoprequiredefault" target="_blank" rel="noopener">见地址</a></p><pre><code>npm add @babel/runtime</code></pre><p>Or </p><pre><code>&quot;@babel/runtime&quot;: &quot;7.0.0-beta.55&quot;</code></pre><p>解决之后:<br><img src="/2018/09/15/React-Native入门/图4.png" alt="图4"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;最近在开始学习React-Native, 但是环境搭建就碰到了问题,如图1&lt;br&gt;&lt;img src=&quot;/2018/09/15/React-Native入门/图1.png&quot; alt=&quot;图1&quot;&gt;&lt;br&gt;网上找了很多答案, 都不是很满意,最后的解决办法就是&lt;strong&gt;删除No
+        &lt;h1 id=&quot;1-最近在开始学习React-Native-但是环境搭建就碰到了问题-如图1&quot;&gt;&lt;a href=&quot;#1-最近在开始学习React-Native-但是环境搭建就碰到了问题-如图1&quot; class=&quot;headerlink&quot; title=&quot;1.最近在开始学习React-N
       
     
     </summary>
@@ -361,13 +370,13 @@ import android.util.TypedValue;
     
       <category term="android" scheme="http://yoursite.com/tags/android/"/>
     
-      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
-    
       <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
     
       <category term="px" scheme="http://yoursite.com/tags/px/"/>
     
       <category term="ps" scheme="http://yoursite.com/tags/ps/"/>
+    
+      <category term="utils" scheme="http://yoursite.com/tags/utils/"/>
     
   </entry>
   
